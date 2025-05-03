@@ -1,4 +1,4 @@
-# Node Kamppis
+# Node Kämppis
 
 This is a partial remake of our [Kamppis App](https://github.com/HH-Nat20/kamppis-server) backend which was made with Spring Boot / Kotlin.
 The purpose of this work is to compare the workflow and performance of Node / Express.js to web backend frameworks I have previously used.
@@ -87,7 +87,54 @@ I liked the simplicity so far.
 
 ### Next step
 
-This was only a simple Hello World -page so we can't jump to any conclusions yet. My next step was to try something real - Trying some real endpoints we had in our Kamppis App server
+This was only a simple Hello World -page so we can't jump to any conclusions yet. My goal was to try something real - Trying some endpoints we had in our Kamppis App server.
+
+I hardly knew enough of using express to move straight to building something useful, so I continued with the tutorials in expressjs.com. They introduced me to something awesome:
+
+```sh
+npx express-generator
+```
+
+Running that on my work direcotry generated me some files and folders as boilerplate. Now my express project folder looks much like a Laravel or Spring Boot project!
+
+The generator added a script to my package.json so now I could run my project with
+
+```sh
+npm start
+```
+
+It started so fast I was waiting for some more logs to appear on the screen before I realized I could already enter my web page on the browser.
+
+Looking at the files it was easy to see how routing worked, so I gave it a test and created a file `test.js` inside the routes folder.
+
+```js
+var express = require("express");
+var router = express.Router();
+
+router.get("/", function (req, res, next) {
+  res.send("This is a test");
+});
+
+module.exports = router;
+```
+
+Then I added these lines to `app.js`
+
+```js
+var testRouter = require("./routes/test"); // to the imports
+
+app.use("/test", testRouter); // after the other routes
+```
+
+I was sure it would work immediately, but it didn't. I had to restart the server, and then it worked. No big deal!
+
+### Long story short
+
+I went on to learn more about express using resources online and artificial intelligence (ChatGPT) for though questions.
+
+I learned how to set up typescript (8) for my nodejs project and about a library called `TypeORM` which lets the programmer have similar database entities to the ones in Spring Boot.
+
+One thing I really liked while learning with trial and error, was to notice how the error messages in the console, although not perfect, were much clearer than those Java gives us. It made debugging much faster.
 
 ## Resources
 
@@ -104,3 +151,5 @@ This was only a simple Hello World -page so we can't jump to any conclusions yet
 6. [Laravel vs Node.js: Making the Right Choice (Simplilearn)](https://www.simplilearn.com/laravel-vs-node-js-article)
 
 7. [Hello world example (expressjs.com)](https://expressjs.com/en/starter/hello-world.html)
+
+8. [How to set up Typescript with Node.js and Express (Aman Mittal)](https://blog.logrocket.com/express-typescript-node/)

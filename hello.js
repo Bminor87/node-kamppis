@@ -1,3 +1,5 @@
+// Copied from
+// https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Introduction
 // Load HTTP module
 const http = require("http");
 
