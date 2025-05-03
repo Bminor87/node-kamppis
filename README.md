@@ -16,7 +16,7 @@ Although I'd probably say Javascript is my strongest language, because I've used
 
 ### Getting started
 
-I began by looking for a quick start tutorial on how to get started with NodeJS and Express.js. I was expecting to find an installer that creates the boilerplate for my Express project, much like Spring Boot or Laravel.
+I began by looking for a quick start tutorial on how to get started with NodeJS and Express.js. I was expecting to find an installer that creates the boilerplate for my Node.js project, much like Spring Boot or Laravel.
 
 To my surprise, I was instructed to only write a single Javascript file, which was also very short:
 
@@ -48,7 +48,42 @@ Now I could start my server by simply typing
 node filename
 ```
 
-The server was up and running in no time - no waiting to compile like in Spring Boot. Getting Laravel up and running is faster than Spring Boot, but here Express takes the cake.
+This is a plain Node.js example. Express comes later in the tutorial.
+
+The server was up and running in no time - no waiting to compile like in Spring Boot. Getting Laravel up and running is faster than Spring Boot, but here Node.js takes the cake. What about Express.js then?
+
+### Express
+
+The tutorial was a bit lacking so I had to find another one from expressjs.com (2).
+
+The previous tutorial failed to mention that I need to initialize the express app with `npm init` and also run `npm install express`. The expressjs.com tutorial brought me to the right track.
+
+This was now familiar territory as I've made apps with React and React Native which use npm packages. I felt excitement to realize I could do my backend with the same technologies I've done my front end projects with.
+
+Now I was able to make a fully working express app:
+
+```js
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.get("/", function (req, res) {
+  res.send("Hello World!");
+});
+
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
+});
+```
+
+That looks even simpler than the plain Node.js version. So so far this was the process:
+
+1. Write the above code in a file like `express-hello.js`
+2. Run `npm init` and answer the questions the initialization wizard asks
+3. Run `npm install express` to add express as a dependency.
+4. Run `node express-hello` to get the server up and running
+
+I liked the simplicity so far.
 
 ### Next step
 
@@ -67,3 +102,5 @@ This was only a simple Hello World -page so we can't jump to any conclusions yet
 5. [5 Node.js Advantages and Disadvantages and What They Mean for Your Project](https://www.epam.com/careers/blog/5-node-js-advantages-and-disadvantages-and-what-they-mean-for-your-project)
 
 6. [Laravel vs Node.js: Making the Right Choice (Simplilearn)](https://www.simplilearn.com/laravel-vs-node-js-article)
+
+7. [Hello world example (expressjs.com)](https://expressjs.com/en/starter/hello-world.html)

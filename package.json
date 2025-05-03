@@ -1,0 +1,23 @@
+{
+  "name": "node-kamppis",
+  "version": "1.0.0",
+  "description": "Nodejs and express testing",
+  "homepage": "https://github.com/Bminor87/node-kamppis#readme",
+  "bugs": {
+    "url": "https://github.com/Bminor87/node-kamppis/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bminor87/node-kamppis.git"
+  },
+  "license": "ISC",
+  "author": "Bminor87",
+  "type": "commonjs",
+  "main": "express-hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
