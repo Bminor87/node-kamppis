@@ -10,7 +10,7 @@ Tekijä: Jesse Hellman
 
 ---
 
-[🎦 Video Presentation (in finnish)](https://hellmanstudios.fi/kamppis-app.mp4)
+[🎦 Video Presentation (in finnish)](https://hellmanstudios.fi/node-kamppis.mp4)
 
 # 1. Introduction
 
