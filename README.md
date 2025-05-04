@@ -219,7 +219,11 @@ Writing these models, controllers and routes were the easiest part, as it was mo
 
 ## 2.6 Image uploads
 
-I ran out of time
+For file uploads I found a package called [Multer](https://www.npmjs.com/package/multer). Following the instructions I was able to make an upload middleware pretty quickly.
+
+This was way faster than I achieved this using Spring Boot. I almost gave up on the image uploads because it was so much harder. I might have done something wrong there and this might have been lucky, but Express takes the cake here.
+
+It wasn't as easy as uploading files in Laravel though.
 
 # 3. Analysis
 
