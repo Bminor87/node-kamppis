@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema } from "mongoose"
+import { Document, Schema, model } from "mongoose"
 
 export interface User extends Document {
   firstName: string
@@ -11,7 +11,6 @@ export interface User extends Document {
   isOnline: boolean
   createdAt: Date
   updatedAt?: Date
-  deletedAt: Date | null
 }
 
 const UserSchema = new Schema<User>(
@@ -30,11 +29,10 @@ const UserSchema = new Schema<User>(
     isOnline: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date },
-    deletedAt: { type: Date, default: null },
   },
   {
     timestamps: { createdAt: true, updatedAt: true },
   },
 )
 
-export const UserModel = mongoose.model<User>("User", UserSchema)
+export const UserModel = model<User>("User", UserSchema)
