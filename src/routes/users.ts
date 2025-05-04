@@ -1,10 +1,19 @@
-import { Request, Response, NextFunction } from "express";
-var express = require("express");
-var router = express.Router();
+import {
+  createUser,
+  getUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+} from "../controllers/UserController";
 
-/* GET users listing. */
-router.get("/", function (req: Request, res: Response, next: NextFunction) {
-  res.send("respond with a resource");
-});
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/", getUsers);
+router.get("/:id", getUserById);
+router.post("/", createUser);
+router.put("/:id", updateUser);
+router.delete("/:id", deleteUser);
 
 module.exports = router;

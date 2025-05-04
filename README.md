@@ -132,9 +132,27 @@ I was sure it would work immediately, but it didn't. I had to restart the server
 
 I went on to learn more about express using resources online and artificial intelligence (ChatGPT) for though questions.
 
-I learned how to set up typescript (8) for my nodejs project and about a library called `TypeORM` which lets the programmer have similar database entities to the ones in Spring Boot.
+I learned how to set up typescript (8) for my nodejs project and about a library called `TypeORM` which lets the programmer have similar database entities to the ones in Spring Boot. I decided to skip TypeORM to make this project in a more Express way than the Spring Boot way.
 
 One thing I really liked while learning with trial and error, was to notice how the error messages in the console, although not perfect, were much clearer than those Java gives us. It made debugging much faster.
+
+## Building the Kämppis App Server
+
+### Creating the Docker files and models
+
+As this was not a Docker learning experience, I asked chatGPT to write me a Dockerfile and docker-compose.yml which would work for my project. Then I decided on the endpoints I would make.
+
+- User (Because everything depends on it)
+- UserProfile (Arguably the most important endpoint in our app)
+- ProfilePhoto (I wanted to try image uploading - it was relatively difficult in Spring Boot)
+
+So I began with making the types for these in a `models` folder. After that, it was easy to fill up the `users.ts` file in the `routes` folder, as one was already there, and I needed the `/users` endpoint. As per the logrocket tutorial (8), I separated the logic from the routes into controller files.
+
+### Controllers, Mongoose and Routing
+
+Creating the controllers I realized I needed to set up a database connection to be able to do anything useful in those controllers. So I read about MongoDB (9) and Mongoose (10) and applied what I learned on my models and started writing my controllers.
+
+Mongoose is a ORM library which makes it easier to talk with the MongoDB database in a Node/Express app. I had never tried MongoDB before and I wanted to have this experience, and I was immediately sold on Mongoose. The logic felt very familiar as I had written similar Schemas for our front end validation in our Kämppis App.
 
 ## Resources
 
@@ -153,3 +171,7 @@ One thing I really liked while learning with trial and error, was to notice how 
 7. [Hello world example (expressjs.com)](https://expressjs.com/en/starter/hello-world.html)
 
 8. [How to set up Typescript with Node.js and Express (Aman Mittal)](https://blog.logrocket.com/express-typescript-node/)
+
+9. [Building a REST API with Express, Node and MongoDB](https://www.mongodb.com/resources/languages/express-mongodb-rest-api-tutorial)
+
+10. [Getting Started (Mongoose)](https://mongoosejs.com/docs/index.html)
