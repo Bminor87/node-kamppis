@@ -10,7 +10,7 @@ Tekijä: Jesse Hellman
 
 ---
 
-[🎦 Video Presentation (in finnish)](https://hellmanstudios.fi/node-kamppis.mp4)
+[🎦 Video Presentation (in finnish)](https://haagahelia-my.sharepoint.com/:v:/g/personal/bhi247_myy_haaga-helia_fi/EWjYLSC96PtJlyM_B4YMFN4BJKE1j1At7sCb68ABELhpYQ?e=msWo6Z&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 # 1. Introduction
 
