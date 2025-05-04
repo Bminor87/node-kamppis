@@ -1,17 +1,17 @@
-import mongoose, { Document, Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose"
 
 export interface User extends Document {
-  firstName: string;
-  lastName: string;
-  email: string;
-  dateOfBirth: Date;
-  gender: "male" | "female" | "other";
-  lookingFor: "users" | "rooms" | "both";
-  status: "active" | "inactive";
-  isOnline: boolean;
-  createdAt: Date;
-  updatedAt?: Date;
-  deletedAt: Date | null;
+  firstName: string
+  lastName: string
+  email: string
+  dateOfBirth: Date
+  gender: "male" | "female" | "other"
+  lookingFor: "users" | "rooms" | "both"
+  status: "active" | "inactive"
+  isOnline: boolean
+  createdAt: Date
+  updatedAt?: Date
+  deletedAt: Date | null
 }
 
 const UserSchema = new Schema<User>(
@@ -34,7 +34,7 @@ const UserSchema = new Schema<User>(
   },
   {
     timestamps: { createdAt: true, updatedAt: true },
-  }
-);
+  },
+)
 
-export const UserModel = mongoose.model<User>("User", UserSchema);
+export const UserModel = mongoose.model<User>("User", UserSchema)
