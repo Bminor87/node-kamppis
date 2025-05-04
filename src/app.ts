@@ -1,44 +1,33 @@
-import mongoose from "mongoose";
-import { errorHandler } from "./middlewares/errorHandler";
+import express from "express"
+import cookieParser from "cookie-parser"
+import logger from "morgan"
+import path from "path"
+import { fileURLToPath } from "url"
+import { dirname } from "path"
 
-import path from "path";
+import { errorHandler } from "./middlewares/errorHandler.js"
+import indexRouter from "./routes/index.js"
+import usersRouter from "./routes/users.js"
 
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-
-import config from "./config/config";
-
-const app = express();
+const app = express()
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "jade")
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(logger("dev"))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(express.static(path.join(__dirname, "public")))
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/", indexRouter)
+app.use("/users", usersRouter)
 
 // Error handling middleware
-app.use(errorHandler);
+app.use(errorHandler)
 
-mongoose
-  .connect(config.mongoUri)
-  .then(() => {
-    console.log("MongoDB connected");
-    // Start the server
-    app.listen(config.port, () => {
-      console.log(`Server running on port ${config.port}`);
-    });
-  })
-  .catch((err) => console.error("Mongo connection error:", err));
-
-module.exports = app;
+export default app

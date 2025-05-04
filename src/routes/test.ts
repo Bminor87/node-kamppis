@@ -1,9 +1,10 @@
-import { Request, Response, NextFunction } from "express";
-var express = require("express");
-var router = express.Router();
+import express from "express"
+import { Request, Response, NextFunction } from "express"
+
+const router = express.Router()
 
 router.get("/", function (req: Request, res: Response, next: NextFunction) {
-  res.send("This is a test");
-});
+  res.send("This is a test")
+})
 
-module.exports = router;
+export default router
